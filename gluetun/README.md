@@ -38,7 +38,12 @@ The add-on forwards the following ports from the underlying container. You may d
 - `8388/tcp` and `8388/udp` – Shadowsocks proxy (optional)
 - `9999/tcp` – Prometheus metrics (optional)
 
+## Requirements
+
+- The add-on needs the Linux TUN/TAP device (`/dev/net/tun`) and the `NET_ADMIN` capability so Gluetun can create the VPN interface.
+  - When you run Home Assistant OS (HAOS) or Home Assistant Supervised, the Supervisor automatically provides both because the add-on requests them in `config.yaml`. Simply install the add-on, disable **Protection mode** when prompted, and start it—no extra host configuration is required.
+  - If you run Home Assistant Container/Core on your own Docker host, make sure the host kernel module `tun` is loaded and pass `/dev/net/tun` plus the `NET_ADMIN` capability into the container (usually through your Docker compose file). Without them Gluetun cannot establish the VPN tunnel.
+
 ## Notes
 
-- The add-on requires access to `/dev/net/tun` and the `NET_ADMIN` capability to create the VPN tunnel. Ensure your Home Assistant host provides these.
 - Depending on your VPN provider you may need to supply additional environment variables. Use the `additional_env` option for full flexibility.
