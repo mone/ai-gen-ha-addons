@@ -1,0 +1,4 @@
+name: Gluetun Home Assistant Add-ons
+url: https://github.com/mone/gluetun-ha
+description: Home Assistant add-on for the Gluetun VPN client.
+maintainer: OpenAI Codex

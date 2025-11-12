@@ -1,0 +1,88 @@
+name: Gluetun VPN Client
+slug: gluetun
+version: "0.1.0"
+description: Secure outbound connections through the Gluetun VPN client container.
+url: https://github.com/your-org/gluetun-ha
+arch:
+  - amd64
+  - armv7
+  - aarch64
+author: "OpenAI Codex"
+startup: services
+init: false
+panel_icon: mdi:shield-key
+panel_title: Gluetun
+webui: http://[HOST]:[PORT:8000]
+ingress: false
+ports:
+  8000/tcp: 8000
+  8388/tcp: null
+  8388/udp: null
+  9999/tcp: null
+ports_description:
+  8000/tcp: Gluetun HTTP control server
+  8388/tcp: Shadowsocks TCP port
+  8388/udp: Shadowsocks UDP port
+  9999/tcp: Prometheus metrics endpoint
+devices:
+  - /dev/net/tun
+privileged:
+  - NET_ADMIN
+map:
+  - config:rw
+  - ssl:ro
+  - share:rw
+  - backup:rw
+environment:
+  TZ: UTC
+options:
+  vpn_provider: custom
+  vpn_type: openvpn
+  server_region: ""
+  server_country: ""
+  server_city: ""
+  server_hostname: ""
+  server_network: ""
+  openvpn_username: ""
+  openvpn_password: ""
+  wireguard_private_key: ""
+  wireguard_public_key: ""
+  wireguard_preshared_key: ""
+  wireguard_addresses: ""
+  wireguard_endpoint_host: ""
+  wireguard_endpoint_port: ""
+  wireguard_persistent_keepalive: ""
+  log_level: info
+  dns_servers: []
+  firewall_allowed_subnets: ""
+  enable_http_control_server: true
+  enable_prometheus: false
+  shadowsocks_address: ""
+  additional_env: []
+schema:
+  vpn_provider: str
+  vpn_type: list(openvpn|wireguard)
+  server_region: str?
+  server_country: str?
+  server_city: str?
+  server_hostname: str?
+  server_network: str?
+  openvpn_username: str?
+  openvpn_password: password?
+  wireguard_private_key: str?
+  wireguard_public_key: str?
+  wireguard_preshared_key: str?
+  wireguard_addresses: str?
+  wireguard_endpoint_host: str?
+  wireguard_endpoint_port: str?
+  wireguard_persistent_keepalive: str?
+  log_level: list(trace|debug|info|warn|error)
+  dns_servers:
+    - str?
+  firewall_allowed_subnets: str?
+  enable_http_control_server: bool
+  enable_prometheus: bool
+  shadowsocks_address: str?
+  additional_env:
+    - name: str
+      value: str
