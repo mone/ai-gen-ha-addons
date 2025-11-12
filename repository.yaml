@@ -1,0 +1,4 @@
+name: Gluetun Home Assistant Add-ons
+url: https://github.com/your-org/gluetun-ha
+description: Home Assistant add-on for the Gluetun VPN client.
+maintainer: Your Name <you@example.com>
