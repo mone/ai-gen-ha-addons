@@ -1,4 +1,4 @@
-ARG BUILD_FROM=qmcgaw/gluetun:latest
+ARG BUILD_FROM=qmcgaw/gluetun:v3.40.0
 FROM ${BUILD_FROM}
 
 USER root

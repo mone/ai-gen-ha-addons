@@ -7,7 +7,7 @@ arch:
   - amd64
   - armv7
   - aarch64
-author: "Home Assistant Community"
+author: "OpenAI Codex"
 startup: services
 init: false
 panel_icon: mdi:shield-key
