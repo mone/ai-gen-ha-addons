@@ -2,6 +2,8 @@
 
 This add-on wraps the official [`qmcgaw/gluetun`](https://github.com/qdm12/gluetun) container so that you can route other add-ons or custom services through a VPN connection managed by Home Assistant.
 
+> **Note:** This add-on definition and documentation were generated with the assistance of an AI (OpenAI ChatGPT).
+
 ## Configuration
 
 All configuration is handled from the Home Assistant add-on UI. The main options are mapped to the environment variables that Gluetun expects.
