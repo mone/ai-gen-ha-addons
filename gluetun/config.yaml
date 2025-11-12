@@ -86,4 +86,3 @@ schema:
   additional_env:
     - name: str
       value: str
-image: null
