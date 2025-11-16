@@ -1,5 +1,7 @@
 # Gluetun Home Assistant add-on repository
 
+[![Add-on CI](https://github.com/mone/gluetun-ha/actions/workflows/addon-ci.yaml/badge.svg)](https://github.com/mone/gluetun-ha/actions/workflows/addon-ci.yaml)
+
 This repository packages the [Gluetun VPN client](https://github.com/qdm12/gluetun) as a Home Assistant add-on so that you can manage the container from the Home Assistant UI.
 
 > **Note:** This add-on and its documentation were generated with the assistance of an AI (OpenAI ChatGPT).
